@@ -60,8 +60,8 @@ mod tests {
     use super::initialize_handler;
 
     use iron::Headers;
-    use iron_test::request;
-    use iron_test::response::extract_body_to_bytes;
+    use self::iron_test::request;
+    use self::iron_test::response::extract_body_to_bytes;
 
     #[test]
     fn get_bind_address_returns_expected_default_value() {
