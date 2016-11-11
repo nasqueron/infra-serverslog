@@ -24,15 +24,15 @@ use std::env;
 
 /// Prepares an Iron handler.
 fn initialize_handler() -> Router {
-    return router!(
+    router!(
         index: get "/" => ::web_handlers::get,
         status: get "/status" => ::web_handlers::alive
-    );
+    )
 }
 
 /// Gets the address the HTTP server should bind to.
 fn get_bind_address() -> String {
-    return env::var("BIND").unwrap_or("0.0.0.0:3000".to_string());
+    env::var("BIND").unwrap_or("0.0.0.0:3000".to_string())
 }
 
 /// Runs an HTTP server.
@@ -43,9 +43,8 @@ pub fn run() {
     info!("Listen to http://{}", listen);
 
     let _server = Iron::new(initialize_handler()).http(&*listen);
-    match _server {
-        Err(err) => error!("{}", err),
-        Ok(_) => {}
+    if let Err(err) = _server {
+        error!("{}", err)
     }
 }
 
