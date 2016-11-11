@@ -60,6 +60,7 @@ mod tests {
     use super::initialize_handler;
 
     use iron::Headers;
+    use iron::status;
     use self::iron_test::request;
     use self::iron_test::response::extract_body_to_bytes;
 
@@ -69,12 +70,13 @@ mod tests {
     }
 
     #[test]
-    fn test_alive() {
+    fn status_returns_200_alive() {
         let response = request::get("http://localhost:3000/status",
                                     Headers::new(),
-                                    &initialize_handler());
-        let result = extract_body_to_bytes(response.unwrap());
+                                    &initialize_handler())
+                       .expect("Can't get a request.");
 
-        assert_eq!(result, b"ALIVE");
+        assert_eq!(response.status, Some(status::Ok));
+        assert_eq!(extract_body_to_bytes(response), b"ALIVE");
     }
 }
