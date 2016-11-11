@@ -69,7 +69,7 @@ mod tests {
     }
 
     #[test]
-    fn test_router() {
+    fn test_alive() {
         let response = request::get("http://localhost:3000/status",
                                     Headers::new(),
                                     &initialize_handler());
