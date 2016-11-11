@@ -20,11 +20,14 @@ extern crate iron;
 #[macro_use]
 extern crate router;
 
+extern crate sqlite3;
+
 /*  -------------------------------------------------------------
     Modules
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
 
 mod http_server;
+mod store;
 mod web_handlers;
 
 /*  -------------------------------------------------------------
