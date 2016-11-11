@@ -1,0 +1,10 @@
+# Nasqueron coding standard provides nice /* */ blocks for headers
+# and sections division. We would like to keep this format among
+# the different C language we use as much as possible.
+normalize_comments = false
+
+# Use the staging area to get a view before/after of the files :
+# git add <your files>
+# rustfmt ...
+# git diff
+write_mode = "Overwrite"
