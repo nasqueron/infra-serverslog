@@ -16,8 +16,8 @@ through the following environment variables:
   * BIND — the address the HTTP server should listen to,
            as a `ìp:port` expression (default: 0.0.0.0:3000)
   * RUST_LOG — the level of logging,
-               `ìnfo` is recommended to get events stream (no default) 
-  * STORE — the path to the SQLite database file 
+               `ìnfo` is recommended to get events stream (no default)
+  * STORE — the path to the SQLite database file
             to store log (default: ./log.db)
 
 ## Build instructions
@@ -29,21 +29,21 @@ To compile the service, you need:
   * Rust (we use the nightly distribution channel)
   * Cargo
   * SQLite 3 (we link against it, so the .so is required)
-  
+
 ### Compile
 
 Use `cargo build` to compile and link the debug version.
 
 For the release, use `cargo build --release`.
 
-### Bypass Cargo
+### Bypass Cargo
 
 If you bypass Cargo to compile, define the following
 environment variables:
 
   * CARGO_PKG_NAME
   * CARGO_PKG_VERSION
-  
+
 ### Tests
 
 To run the tests, use `cargo test`.
