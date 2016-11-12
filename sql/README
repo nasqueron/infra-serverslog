@@ -1,0 +1,6 @@
+This directory contains SQL schemas.
+
+The source code includes schema.sql as compilation time,
+and so this golder is required to build.
+
+The service uses SQLite.
