@@ -34,7 +34,7 @@ To compile the service, you need:
 
 Use `cargo build` to compile and link the debug version.
 
-For the release, use `cargo build --release`.
+For the release, use `make` or `cargo build --release`.
 
 ### Bypass Cargo
 
@@ -46,7 +46,7 @@ environment variables:
 
 ### Tests
 
-To run the tests, use `cargo test`.
+To run the tests, use `make test`.
 
 Note this is an executable, not a library.
 As such, if you want to add a test, you can't use a tests/ folder:
